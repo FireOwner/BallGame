@@ -34,8 +34,8 @@ public class MainActivity extends SimpleBaseGameActivity
     protected Scene onCreateScene()
     {
         Scene scene = new Scene();
-
         scene.setBackground(new Background(1, 0, 0));
+
         return  scene;
     }
 
@@ -43,7 +43,7 @@ public class MainActivity extends SimpleBaseGameActivity
     public EngineOptions onCreateEngineOptions()
     {
         camera = new Camera(0, 0, WIDTH_CAMERA, HEIGHT_CAMERA);
-        EngineOptions engineOptions = new EngineOptions(true, ScreenOrientation.LANDSCAPE_SENSOR, new FillResolutionPolicy(), camera);
+        EngineOptions engineOptions = new EngineOptions(true, ScreenOrientation.PORTRAIT_FIXED, new FillResolutionPolicy(), camera);
 
         return engineOptions;
     }
