@@ -9,6 +9,7 @@ import org.andengine.engine.Engine;
 import org.andengine.engine.camera.Camera;
 import org.andengine.engine.options.EngineOptions;
 import org.andengine.engine.options.ScreenOrientation;
+import org.andengine.engine.options.WakeLockOptions;
 import org.andengine.engine.options.resolutionpolicy.FillResolutionPolicy;
 import org.andengine.entity.scene.Scene;
 import org.andengine.entity.scene.background.Background;
@@ -22,7 +23,6 @@ public class MainActivity extends SimpleBaseGameActivity
     private Camera camera;
     private static final int WIDTH_CAMERA = 800;
     private static final int HEIGHT_CAMERA = 480;
-
 
     @Override
     protected void onCreateResources() throws IOException
@@ -43,7 +43,9 @@ public class MainActivity extends SimpleBaseGameActivity
     public EngineOptions onCreateEngineOptions()
     {
         camera = new Camera(0, 0, WIDTH_CAMERA, HEIGHT_CAMERA);
+
         EngineOptions engineOptions = new EngineOptions(true, ScreenOrientation.PORTRAIT_FIXED, new FillResolutionPolicy(), camera);
+        engineOptions.setWakeLockOptions(WakeLockOptions.SCREEN_ON);
 
         return engineOptions;
     }

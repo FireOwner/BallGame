@@ -50,6 +50,8 @@ public class menu extends ActionBarActivity {
     }
 
     public void Wyjscie(View view) {
+        finish();
+        System.exit(0);
     }
 
     public void Opcje(View view) {
